@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lz68/GF2syg=",
+  "success": true,
+  "projectFilePath": "/workspaces/codespace/csharp/RestSharpDemo/RestSharpDemo.csproj",
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/restsharp/112.1.0/restsharp.112.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
