@@ -6,13 +6,19 @@ class Program
 {
   static async Task Main(){
     try{
-      const String _baseUrl = "https://api.apidash.dev";
+      const String _baseUrl = "https://reqres.in";
       var client = new RestClient(_baseUrl);
 
-      var request = new RestRequest("/country/data", Method.Get);
+      var request = new RestRequest("/api/users/2", Method.Delete);
 
-      request.AddQueryParameter("code", "IND");
-      request.AddQueryParameter("code", "US");
+      request.AddHeader("x-api-key", "reqres-free-v1");
+      request.AddHeader("Content-Type", "application/json");
+
+      var jsonBody = new {
+name = "marfeus",
+job = "accountant"
+};
+      request.AddJsonBody(jsonBody);
 
       var response = await client.ExecuteAsync(request);
       Console.WriteLine("Status Code: " + (int)response.StatusCode);

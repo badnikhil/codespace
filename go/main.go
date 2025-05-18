@@ -6,39 +6,19 @@ import (
   "net/http"
   "net/url"
   "bytes"
-  "mime/multipart"
-  "os"
 )
 
 func main() {
   client := &http.Client{}
-  url, _ := url.Parse("https://api.apidash.dev/io/img")
-  payload := &bytes.Buffer{}
-  writer := multipart.NewWriter(payload)
-  var (
-    file *os.File
-    part io.Writer
-  )
-  
-  writer.WriteField("token", "xyz")
-  file, _ = os.Open("/Documents/up/1.png")
-  defer file.Close()
-  part, _ = writer.CreateFormFile("imfile", "/Documents/up/1.png")
-  io.Copy(part, file)
-  
-  writer.Close()
+  url, _ := url.Parse("https://reqres.in/api/users/2")
+  payload := bytes.NewBuffer([]byte(`{
+"name": "marfeus",
+"job": "accountant"
+}`))
+  req, _ := http.NewRequest("PUT", url.String(), payload)
 
-query := url.Query()
-
-query.Add("size", "2")
-query.Add("len", "3")
-
-url.RawQuery = query.Encode()
-  req, _ := http.NewRequest("POST", url.String(), payload)
-
-  req.Header.Set("User-Agent", "Test Agent")
-  req.Header.Set("Keep-Alive", "true")
-  req.Header.Set("Content-Type", writer.FormDataContentType())
+  req.Header.Set("x-api-key", "reqres-free-v1")
+  req.Header.Set("Content-Type", "application/json")
 
   response, err := client.Do(req)
   if err != nil {
