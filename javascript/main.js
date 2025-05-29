@@ -1,22 +1,13 @@
-const axios = require('axios');
+// refer https://github.com/foss42/apidash/issues/293#issuecomment-1997568083 for details regarding integration
+
 const config = {
-  url: 'https://api.apidash.dev/io/form',
-  method: 'post',
+  url: 'https://api.apidash.dev/country/data',
+  method: 'get',
   params: {
-    "size": [
-      "2"
-    ],
-    "len": [
-      "3"
+    "code": [
+      "IND",
+      "US"
     ]
-  },
-  headers: {
-    "Content-Type": "multipart/form-data"
-  },
-  data: {
-    "text": "API",
-    "sep": "|",
-    "times": "3"
   }
 };
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestSharpDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa1207469e663c56b148208895b69a93c296449c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd187b42f2631a97ace72c8836d5aa6b07f558ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestSharpDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestSharpDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
